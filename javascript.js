@@ -6,8 +6,10 @@ let count=0; //This count is for counting the click on the buttons (left or righ
 let openBtn = document.getElementById("open");
 
 
-if(screen.width<=768){ 
-    alert("Please Rotate Your Device to Landscape For Better Experience")
+if(screen.width<768){ 
+    if (window.matchMedia("(orientation: portrait)").matches) {
+        alert("Please Rotate Your Device to Landscape For Better Experience");
+     }
 
     openBtn.addEventListener("click",function(){  // Open button Function for mobile and tablet size
         right_btn.style.display = "flex"; // Enabled right button
